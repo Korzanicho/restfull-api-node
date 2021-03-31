@@ -105,6 +105,12 @@ handlers.sample = function(data, callback) {
   callback(406, {'name': 'sample handler'});
 };
 
+// Ping handler
+handlers.ping = function(data, callback) {
+  // Callback a http status code, and a payload object
+  callback(200);
+};
+
 // Not found handler
 handlers.notFound = function(data, callback) {
   callback(404);
@@ -112,5 +118,5 @@ handlers.notFound = function(data, callback) {
 
 // Define a request router
 var router = {
-  'sample': handlers.sample,
+  'ping': handlers.ping,
 }
