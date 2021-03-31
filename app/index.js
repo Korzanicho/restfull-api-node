@@ -99,10 +99,10 @@ var undefinedServer = function(res, req) {
 // Define the handlers
 var handlers = {};
 
-// Sample handler
-handlers.sample = function(data, callback) {
+// Hello handler
+handlers.hello = function(data, callback) {
   // Callback a http status code, and a payload object
-  callback(406, {'name': 'sample handler'});
+  callback(200, {'message': 'Hello world!'});
 };
 
 // Ping handler
@@ -119,4 +119,5 @@ handlers.notFound = function(data, callback) {
 // Define a request router
 var router = {
   'ping': handlers.ping,
+  'hello': handlers.hello,
 }
