@@ -7,8 +7,10 @@ var http = require('http');
 var https = require('https');
 var url = require('url');
 var StringDecoder = require('string_decoder').StringDecoder;
-var config = require('./config');
+var config = require('./lib/config');
 var fs = require('fs');
+var handlers = require('./lib/handlers');
+var helpers = require('./lib/helpers');
 
 
 // Instantiate the HTTP server
@@ -72,7 +74,7 @@ var undefinedServer = function(res, req) {
       'queryStringObject': queryStringObject,
       'method': method,
       'headers': headers,
-      'payload': buffer,
+      'payload': helpers.parseJsonToObject(buffer),
     };
 
     // Route the request to the handler specified in the router
@@ -97,28 +99,8 @@ var undefinedServer = function(res, req) {
   });
 }
 
-// Define the handlers
-var handlers = {};
-
-// Hello handler
-handlers.hello = function(data, callback) {
-  // Callback a http status code, and a payload object
-  callback(200, {'message': 'Hello world!'});
-};
-
-// Ping handler
-handlers.ping = function(data, callback) {
-  // Callback a http status code, and a payload object
-  callback(200);
-};
-
-// Not found handler
-handlers.notFound = function(data, callback) {
-  callback(404);
-}
-
 // Define a request router
 var router = {
   'ping': handlers.ping,
-  'hello': handlers.hello,
+  'users': handlers.users,
 }
