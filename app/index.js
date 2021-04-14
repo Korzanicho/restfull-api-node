@@ -103,4 +103,5 @@ var undefinedServer = function(res, req) {
 var router = {
   'ping': handlers.ping,
   'users': handlers.users,
+  'tokens': handlers.tokens,
 }
