@@ -1,12 +1,10 @@
-<!doctype html>
-<html lang="en">
+<html>
 
 <head>
+
   <!-- General Settings -->
-  <meta charset="UTF-8">
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8">
+  <meta http-equiv="content-language" content="en-us">
   <base href="{global.baseUrl}" />
 
   <!-- Meta Tags -->
@@ -17,39 +15,41 @@
   <link type="image/x-icon" rel="icon" href="public/favicon.ico">
   <script type="text/javascript" charset="utf-8" src="public/app.js"></script>
   <link rel="stylesheet" type="text/css" href="public/app.css" />
+
 </head>
 
 <body class="{body.class}">
   <!-- Page Wrapper -->
   <div class="wrapper">
-
     <!-- Header -->
     <div class="header">
       <!-- Logo -->
-      <a class="logo" href="">
-        <img src="public/webkor-logo.png" alt="logo">
+      <a class="logo" href="/">
+        <img src="public/webkor-logo.png" alt="Logo" />
       </a>
-      <!-- Navigation-->
+      <!-- Navigation -->
       <ul class="menu">
         <li>
           <a href="/">Home</a>
         </li>
-        <li>
-          <a class="loggedOut" href="/account/create">Signup</a>
+        <li class="loggedOut">
+          <a href="/account/create">Signup</a>
         </li>
-        <li>
-          <a class="loggedOut" href="/session/create">Login</a>
+        <li class="loggedOut">
+          <a href="/session/create">Login</a>
         </li>
-        <li>
-          <a class="loggedIn" href="/checks/all">Dashboard</a>
+        <li class="loggedIn">
+          <a href="/checks/all">Dashboard</a>
         </li>
-        <li>
-          <a class="loggedIn" href="/account/edit">Account Settings</a>
+        <li class="loggedIn">
+          <a href="/account/edit">Account Settings</a>
         </li>
-        <li>
-          <a class="loggedIn" href="#">Logout</a>
+        <li class="loggedIn">
+          <a href="#">Logout</a>
         </li>
       </ul>
+
+      <div class="clear"></div>
     </div>
 
     <!-- Page-Specific Content -->
